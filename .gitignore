@@ -2,6 +2,7 @@
 *.pyc
 __pycache__/
 db.sqlite3  # If using SQLite database for development
+media/      # Uploaded media files, if applicable
 
 # Environment variables
 .env
