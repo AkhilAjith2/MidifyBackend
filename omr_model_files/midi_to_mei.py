@@ -3,7 +3,7 @@ import subprocess
 
 def convert_midi_to_mei_with_musescore(midi_file, mei_output_file):
     # Path to the MuseScore executable
-    musescore_executable = "MuseScore4.exe"  # Update this to the actual path if necessary
+    musescore_executable = "C:/Program Files/MuseScore 4/bin/MuseScore4.exe"  # Update this to the actual path if necessary
 
     # Command to convert MIDI to MEI using MuseScore
     command = [
