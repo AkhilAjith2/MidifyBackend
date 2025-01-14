@@ -1,0 +1,20 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3  # If using SQLite database for development
+media/      # Uploaded media files, if applicable
+
+# Environment variables
+.env
+
+# Virtual Environment
+venv/
+.env/
+
+# Node Modules
+node_modules/
+build/
+dist/
+
+# Ignore compiled static files
+/static/
