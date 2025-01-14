@@ -17,12 +17,14 @@ class UploadSerializerTest(TestCase):
         expected_data = {
             'id': self.upload.id,
             'user': self.user.id,
-            'file': f'/media/{self.upload.file.name}',
-            'uploaded_at': serializer.data['uploaded_at'],
+            'file': f'/media/{self.upload.file.name}',  # Ensure correct format if using media URLs
+            'uploaded_at': serializer.data['uploaded_at'],  # Use dynamic datetime format from serializer
             'status': 'pending',
-            'converted_file': None,
+            'converted_file': None,  # Expected to be None for initial uploads
+            'converted_mei_file': None,  # Make sure to use the correct field name as per serializer
         }
         self.assertEqual(serializer.data, expected_data)
+
 
 class ProfileSerializerTest(TestCase):
     def setUp(self):
