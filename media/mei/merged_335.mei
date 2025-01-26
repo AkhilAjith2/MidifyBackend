@@ -1,0 +1,822 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0+basic">
+   <meiHead>
+      <fileDesc>
+         <titleStmt>
+            <title/>
+         </titleStmt>
+         <pubStmt>
+            <date isodate="2025-01-18T00:27:42"/>
+         </pubStmt>
+      </fileDesc>
+   </meiHead>
+   <music>
+      <body>
+         <mdiv>
+            <score>
+               <scoreDef>
+                  <staffGrp><staffDef n="2" lines="5" meter.count="6" meter.unit="8">
+                        <clef shape="G" line="2"/>
+                     </staffDef>
+                  <staffDef n="1" lines="5" meter.count="6" meter.unit="8">
+                        <clef shape="F" line="4"/>
+                     </staffDef>
+                  </staffGrp></scoreDef>
+               <section><measure n="1"><staff xml:id="m1s1" n="1">
+                        <layer xml:id="m1s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1nnvns5" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n8v2egb" dur="8" pname="a" oct="3"/>
+                              <note xml:id="n1o0wf6d" dur="8" pname="c" oct="4"/>
+                           </beam>
+                           <note xml:id="njn6uh" dur="8" pname="a" oct="3"/>
+                           <note xml:id="n1f5pju2" dur="4" pname="b" oct="2">
+                              <artic xml:id="a1dmsgx4" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                     <staff xml:id="m1s1" n="2">
+                        <layer xml:id="m1s1l1" n="1">
+                           <mRest xml:id="m1dbd02"/>
+                        </layer>
+                     </staff>
+                     </measure><measure n="2"><staff xml:id="m2s1" n="1">
+                        <layer xml:id="m2s1l1" n="1">
+                           <mRest xml:id="m20r74i"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m2s1" n="2">
+                        <layer xml:id="m2s1l1" n="1">
+                           <mRest xml:id="m2awxky"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="3"><staff xml:id="m3s1" n="1">
+                        <layer xml:id="m3s1l1" n="1">
+                           <beam>
+                              <note xml:id="n17xqwm7" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n14vwnm" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n1vz3goe" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="n11aoyp" dur="8" pname="a" oct="3"/>
+                           <note xml:id="n103i12" dur="4" pname="c" oct="3">
+                              <artic xml:id="a1i1fz7y" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m3s1" n="2">
+                        <layer xml:id="m3s1l1" n="1">
+                           <mRest xml:id="mr7sa4u"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="4"><staff xml:id="m4s1" n="1">
+                        <layer xml:id="m4s1l1" n="1">
+                           <mRest xml:id="mz8v95v"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m4s1" n="2">
+                        <layer xml:id="m4s1l1" n="1">
+                           <mRest xml:id="mtn0ddg"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="5"><staff xml:id="m5s1" n="1">
+                        <layer xml:id="m5s1l1" n="1">
+                           <beam>
+                              <note xml:id="nefg9gk" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n1tm7b3r" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n11p3ec9" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="ndohmhr" dur="8" pname="c" oct="4"/>
+                              <note xml:id="npvjs7s" dur="8" pname="a" oct="3"/>
+                              <note xml:id="nbzqaw5" dur="8" pname="b" oct="2"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m5s1" n="2">
+                        <layer xml:id="m5s1l1" n="1">
+                           <mRest xml:id="mxesksy"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="6"><staff xml:id="m6s1" n="1">
+                        <layer xml:id="m6s1l1" n="1">
+                           <mRest xml:id="m1bllz06"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m6s1" n="2">
+                        <layer xml:id="m6s1l1" n="1">
+                           <mRest xml:id="m1bzqlxs"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="7"><staff xml:id="m7s1" n="1">
+                        <layer xml:id="m7s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1okr2ly" dur="8" pname="a" oct="2"/>
+                              <note xml:id="n1tgiaiu" dur="8" pname="e" oct="3"/>
+                              <note xml:id="nemmdib" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="nm0tjx" dots="1" dur="4" pname="a" oct="2">
+                              <artic xml:id="a98x9el" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m7s1" n="2">
+                        <layer xml:id="m7s1l1" n="1">
+                           <rest xml:id="r796x47" dots="1" dur="4"/>
+                           <rest xml:id="r1uradr4" dur="4"/>
+                           <note xml:id="ngh0f2a" dur="8" pname="e" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="8"><staff xml:id="m8s1" n="1">
+                        <layer xml:id="m8s1l1" n="1">
+                           <mRest xml:id="mbrkx3v"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m8s1" n="2">
+                        <layer xml:id="m8s1l1" n="1">
+                           <mRest xml:id="m11b4h8r"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="9"><staff xml:id="m9s1" n="1">
+                        <layer xml:id="m9s1l1" n="1">
+                           <beam>
+                              <note xml:id="niiw6lt" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n1id7kcb" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n1vmt9mh" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n531xd4" dur="8" pname="c" oct="4"/>
+                              <note xml:id="n1h8xien" dur="8" pname="c" oct="4"/>
+                              <note xml:id="n1yl19l" dur="8" pname="b" oct="2"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m9s1" n="2">
+                        <layer xml:id="m9s1l1" n="1">
+                           <note xml:id="n14q4gge" dur="4" pname="g" oct="4"/>
+                           <note xml:id="n1ct5vys" dur="8" pname="g" oct="4"/>
+                           <note xml:id="nahqaeu" dots="1" dur="4" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="10"><staff xml:id="m10s1" n="1">
+                        <layer xml:id="m10s1l1" n="1">
+                           <mRest xml:id="m5sygi3"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m10s1" n="2">
+                        <layer xml:id="m10s1l1" n="1">
+                           <note xml:id="nybfs4w" dots="1" dur="4" pname="g" oct="4">
+                              <artic xml:id="a1qwd2yw" artic="stacc"/>
+                           </note>
+                           <rest xml:id="r1a0dul" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="11"><staff xml:id="m11s1" n="1">
+                        <layer xml:id="m11s1l1" n="1">
+                           <beam>
+                              <note xml:id="n18umxrw" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n1l3nnwd" dur="8" pname="a" oct="3"/>
+                              <note xml:id="n1p30m0p" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="nuj8zbo" dur="8" pname="a" oct="3"/>
+                           <note xml:id="n1d4l6ex" dur="4" pname="a" oct="2">
+                              <artic xml:id="a1eywpky" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m11s1" n="2">
+                        <layer xml:id="m11s1l1" n="1">
+                           <note xml:id="nh7j2yv" dur="8" pname="a" oct="4"/>
+                           <note xml:id="ngil8kj" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1y9di0u" dur="8" pname="a" oct="4"/>
+                           <note xml:id="njzmo85" dur="4" pname="e" oct="4">
+                              <artic xml:id="a1epm08v" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                     </measure><measure n="12"><staff xml:id="m12s1" n="1">
+                        <layer xml:id="m12s1l1" n="1">
+                           <mRest xml:id="mmyv4nn"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m12s1" n="2">
+                        <layer xml:id="m12s1l1" n="1">
+                           <mRest xml:id="m1efljof"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="13"><staff xml:id="m13s1" n="1">
+                        <layer xml:id="m13s1l1" n="1">
+                           <beam>
+                              <note xml:id="n4jkj6e" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n1qdkkgm" dur="8" pname="g" oct="3"/>
+                              <note xml:id="nkv4v2j" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n1tc5uj4" dur="8" pname="c" oct="4"/>
+                              <note xml:id="n1low3xs" dur="8" pname="c" oct="4"/>
+                              <note xml:id="n1kokaiv" dur="8" pname="d" oct="3"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m13s1" n="2">
+                        <layer xml:id="m13s1l1" n="1">
+                           <note xml:id="n1sefw6" dur="4" pname="g" oct="4"/>
+                           <note xml:id="n1qpvgcm" dur="8" pname="g" oct="4"/>
+                           <beam>
+                              <note xml:id="n7vtfrz" dur="16" pname="g" oct="4"/>
+                              <note xml:id="n1gx60hs" dur="16" pname="g" oct="4"/>
+                              <note xml:id="n1eq4na5" dots="1" dur="8" pname="g" oct="4"/>
+                              <note xml:id="n1u71tfq" dur="16" pname="g" oct="4"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     </measure><measure n="14"><staff xml:id="m14s1" n="1">
+                        <layer xml:id="m14s1l1" n="1">
+                           <mRest xml:id="mbo2kue"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m14s1" n="2">
+                        <layer xml:id="m14s1l1" n="1">
+                           <note xml:id="n1rd83ws" dots="1" dur="4" pname="g" oct="4"/>
+                           <rest xml:id="r1ljo46e" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="15"><staff xml:id="m15s1" n="1">
+                        <layer xml:id="m15s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1q7itl4" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n11ntjti" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n4jj9zx" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="ncgyz2f" dur="8" pname="a" oct="3"/>
+                           <note xml:id="n156x60z" dur="4" pname="a" oct="2">
+                              <artic xml:id="a101a3v2" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m15s1" n="2">
+                        <layer xml:id="m15s1l1" n="1">
+                           <note xml:id="nu53quj" dur="4" pname="a" oct="4"/>
+                           <note xml:id="nvaidn5" dur="8" pname="a" oct="4"/>
+                           <note xml:id="n1djen3j" dots="1" dur="4" pname="a" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="16"><staff xml:id="m16s1" n="1">
+                        <layer xml:id="m16s1l1" n="1">
+                           <mRest xml:id="m1pbnrzj"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m16s1" n="2">
+                        <layer xml:id="m16s1l1" n="1">
+                           <note xml:id="n1exwr75" dots="1" dur="4" pname="g" oct="4">
+                              <artic xml:id="ain2vx1" artic="stacc"/>
+                           </note>
+                           <rest xml:id="r1sb4uqz" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="17"><staff xml:id="m17s1" n="1">
+                        <layer xml:id="m17s1l1" n="1">
+                           <beam>
+                              <note xml:id="n6uqzdc" dur="8" pname="f" oct="2"/>
+                              <note xml:id="npl1w1s" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n1nw6eb2" dur="8" pname="e" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="npkulho" dur="8" pname="f" oct="3"/>
+                              <note xml:id="nyqnl7i" dur="8" pname="d" oct="3"/>
+                              <note xml:id="np7kw7l" dur="8" pname="f" oct="2"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m17s1" n="2">
+                        <layer xml:id="m17s1l1" n="1">
+                           <note xml:id="n1i4ph05" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1c48qfi" dur="8" pname="a" oct="4"/>
+                           <beam>
+                              <note xml:id="n1inj553" dur="8" pname="a" oct="4"/>
+                              <note xml:id="n14fm7nl" dur="8" pname="a" oct="4"/>
+                              <note xml:id="n11wwsi6" dur="8" pname="a" oct="4"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     </measure><measure n="18"><staff xml:id="m18s1" n="1">
+                        <layer xml:id="m18s1l1" n="1">
+                           <mRest xml:id="mpgbyyn"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m18s1" n="2">
+                        <layer xml:id="m18s1l1" n="1">
+                           <mRest xml:id="m12s5bz4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="19"><staff xml:id="m19s1" n="1">
+                        <layer xml:id="m19s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1jocp2d" dur="8" pname="d" oct="3"/>
+                              <note xml:id="n7ltxmh" dur="8" pname="g" oct="3"/>
+                              <note xml:id="ns7frvj" dur="8" pname="g" oct="3"/>
+                           </beam>
+                           <note xml:id="ncwrngf" dur="8" pname="g" oct="3"/>
+                           <note xml:id="nba8xz5" dur="4" pname="g" oct="2">
+                              <artic xml:id="a1dkazsh" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m19s1" n="2">
+                        <layer xml:id="m19s1l1" n="1">
+                           <note xml:id="nzwii65" dur="4" pname="a" oct="4"/>
+                           <note xml:id="nksc918" dur="8" pname="g" oct="4"/>
+                           <note xml:id="n1d2m9a7" dur="4" pname="g" oct="4"/>
+                           <note xml:id="n1aerdar" dur="8" pname="f" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="20"><staff xml:id="m20s1" n="1">
+                        <layer xml:id="m20s1l1" n="1">
+                           <mRest xml:id="m1ut25yq"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m20s1" n="2">
+                        <layer xml:id="m20s1l1" n="1">
+                           <mRest xml:id="m68l7hw"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="21"><staff xml:id="m21s1" n="1">
+                        <layer xml:id="m21s1l1" n="1">
+                           <beam>
+                              <note xml:id="nojd4qv" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n1qg0yis" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n16fiiu9" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n16ac254" dur="8" pname="c" oct="4"/>
+                              <note xml:id="n1d0884" dur="8" pname="a" oct="3"/>
+                              <note xml:id="n1fmfav0" dur="8" pname="c" oct="3"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m21s1" n="2">
+                        <layer xml:id="m21s1l1" n="1">
+                           <note xml:id="nycvwtg" dots="1" dur="4" pname="g" oct="4"/>
+                           <note xml:id="n1tn9pn3" dots="1" dur="4" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="22"><staff xml:id="m22s1" n="1">
+                        <layer xml:id="m22s1l1" n="1">
+                           <mRest xml:id="m1x902sa"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m22s1" n="2">
+                        <layer xml:id="m22s1l1" n="1">
+                           <mRest xml:id="meaqt8e"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="23"><staff xml:id="m23s1" n="1">
+                        <layer xml:id="m23s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1ro4bat" dur="8" pname="g" oct="2"/>
+                              <note xml:id="n123mr9g" dur="8" pname="d" oct="3"/>
+                              <note xml:id="n1rxpeik" dur="8" pname="g" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n69tzuz" dur="8" pname="b" oct="3"/>
+                              <note xml:id="n2uhx4q" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n1erkoa" dur="8" pname="d" oct="3"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m23s1" n="2">
+                        <layer xml:id="m23s1l1" n="1">
+                           <rest xml:id="r15awizu" dots="1" dur="4"/>
+                           <rest xml:id="r1rstuc5" dur="4"/>
+                           <note xml:id="n3y9e26" dur="8" pname="e" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="24"><staff xml:id="m24s1" n="1">
+                        <layer xml:id="m24s1l1" n="1">
+                           <mRest xml:id="m3lznwd"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m24s1" n="2">
+                        <layer xml:id="m24s1l1" n="1">
+                           <mRest xml:id="m19q4ypq"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="25"><staff xml:id="m25s1" n="1">
+                        <layer xml:id="m25s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1txsmyz" dur="8" pname="c" oct="3"/>
+                              <note xml:id="n1eg6hb7" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n1s0xvtk" dur="8" pname="c" oct="4"/>
+                           </beam>
+                           <note xml:id="n21k7ay" dur="4" pname="c" oct="4"/>
+                           <note xml:id="n1pz4fi5" dur="8" pname="c" oct="4"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="m25s1" n="2">
+                        <layer xml:id="m25s1l1" n="1">
+                           <rest xml:id="r80wivx" dur="4"/>
+                           <note xml:id="n89k949" dur="8" pname="e" oct="4"/>
+                           <note xml:id="n11hayk9" dur="4" pname="e" oct="4"/>
+                           <note xml:id="n1kjjjw9" dur="8" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="26"><staff xml:id="m26s1" n="1">
+                        <layer xml:id="m26s1l1" n="1">
+                           <note xml:id="n3cgwrc" dots="1" dur="4" pname="c" oct="3">
+                              <artic xml:id="az04epg" artic="stacc"/>
+                           </note>
+                           <rest xml:id="r1ytnflg" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m26s1" n="2">
+                        <layer xml:id="m26s1l1" n="1">
+                           <mRest xml:id="m1164w20"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="27"><staff xml:id="m27s1" n="1">
+                        <layer xml:id="m27s1l1" n="1">
+                           <beam>
+                              <note xml:id="nwb2mh2" dur="8" pname="f" oct="2"/>
+                              <note xml:id="n13vy440" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n1i3ijh7" dur="8" pname="g" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="nomlzty" dur="8" pname="f" oct="3"/>
+                              <note xml:id="ngbom4j" dur="8" pname="g" oct="2"/>
+                              <note xml:id="n9rx3cr" dur="8" pname="d" oct="3"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m27s1" n="2">
+                        <layer xml:id="m27s1l1" n="1">
+                           <note xml:id="ng4bwdf" dots="1" dur="4" pname="g" oct="4"/>
+                           <note xml:id="ngfow3k" dur="8" pname="g" oct="4"/>
+                           <note xml:id="nmu3cfy" dur="4" pname="g" oct="4">
+                              <artic xml:id="a1sdmavd" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                     </measure><measure n="28"><staff xml:id="m28s1" n="1">
+                        <layer xml:id="m28s1l1" n="1">
+                           <note xml:id="nx0uhzl" dots="1" dur="4" pname="e" oct="3">
+                              <artic xml:id="a115np8t" artic="stacc"/>
+                           </note>
+                           <rest xml:id="r1db6cqt" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m28s1" n="2">
+                        <layer xml:id="m28s1l1" n="1">
+                           <mRest xml:id="mfrdlib"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="29"><staff xml:id="m29s1" n="1">
+                        <layer xml:id="m29s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1mnlko8" dur="8" pname="e" oct="3"/>
+                              <note xml:id="nhidkr6" dur="8" pname="a" oct="3"/>
+                              <note xml:id="n1wtil1t" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="nza7rwx" dur="8" pname="a" oct="3"/>
+                           <note xml:id="n8q3qam" dur="4" pname="c" oct="3">
+                              <artic xml:id="a155mecw" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m29s1" n="2">
+                        <layer xml:id="m29s1l1" n="1">
+                           <note xml:id="n1bn5cfq" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1skwsl8" dur="8" pname="a" oct="4"/>
+                           <note xml:id="ngximsh" dur="8" pname="a" oct="4"/>
+                           <note xml:id="n10stklv" dur="4" pname="f" oct="4">
+                              <artic xml:id="art3xay" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                     </measure><measure n="30"><staff xml:id="m30s1" n="1">
+                        <layer xml:id="m30s1l1" n="1">
+                           <mRest xml:id="mv6kur3"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m30s1" n="2">
+                        <layer xml:id="m30s1l1" n="1">
+                           <mRest xml:id="m1ks3468"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="31"><staff xml:id="m31s1" n="1">
+                        <layer xml:id="m31s1l1" n="1">
+                           <beam>
+                              <note xml:id="n11rrj5x" dur="8" pname="f" oct="2"/>
+                              <note xml:id="n5nbqgp" dur="8" pname="a" oct="2"/>
+                              <note xml:id="nnc35g0" dur="8" pname="g" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n13ytt5i" dur="8" pname="a" oct="3"/>
+                              <note xml:id="n1adbic5" dur="8" pname="f" oct="3"/>
+                              <note xml:id="n1m0vibn" dur="8" pname="f" oct="2"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m31s1" n="2">
+                        <layer xml:id="m31s1l1" n="1">
+                           <note xml:id="n1gw6auq" dur="4" pname="a" oct="4"/>
+                           <note xml:id="nbybztl" dur="8" pname="f" oct="4"/>
+                           <note xml:id="n12jhzmq" dur="4" pname="d" oct="5"/>
+                           <note xml:id="nywhgq1" dur="8" pname="c" oct="5"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="32"><staff xml:id="m32s1" n="1">
+                        <layer xml:id="m32s1l1" n="1">
+                           <mRest xml:id="m1nkgzh"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m32s1" n="2">
+                        <layer xml:id="m32s1l1" n="1">
+                           <mRest xml:id="m89lw9z"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="33"><staff xml:id="m33s1" n="1">
+                        <layer xml:id="m33s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1ht9u6h" dur="8" pname="g" oct="2"/>
+                              <note xml:id="n3bhnke" dur="8" pname="d" oct="3"/>
+                              <note xml:id="ncm6p0a" dur="8" pname="g" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n1j2qvn9" dur="8" pname="b" oct="3"/>
+                              <note xml:id="n1cq9rh" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n1qiibch" dur="8" pname="b" oct="2"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m33s1" n="2">
+                        <layer xml:id="m33s1l1" n="1">
+                           <note xml:id="n1pgwv7r" dur="4" pname="b" oct="4"/>
+                           <note xml:id="nn3fz06" dur="8" pname="d" oct="5"/>
+                           <note xml:id="neetjr6" dur="4" pname="d" oct="5"/>
+                           <note xml:id="nwyfpbm" dur="8" pname="d" oct="5"/>
+                        </layer>
+                     </staff>
+                     </measure><measure n="34"><staff xml:id="m34s1" n="1">
+                        <layer xml:id="m34s1l1" n="1">
+                           <mRest xml:id="mh8gjm7"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m34s1" n="2">
+                        <layer xml:id="m34s1l1" n="1">
+                           <mRest xml:id="m5skmus"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="35"><staff xml:id="m35s1" n="1">
+                        <layer xml:id="m35s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1a488nd" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n3lechr" dur="8" pname="b" oct="3"/>
+                              <note xml:id="n173ulmt" dur="8" pname="c" oct="4"/>
+                           </beam>
+                           <note xml:id="n1esmjif" dots="1" dur="4" pname="e" oct="4">
+                              <artic xml:id="a18kcbkz" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m35s1" n="2">
+                        <layer xml:id="m35s1l1" n="1">
+                           <note xml:id="n1vhg2z2" dots="1" dur="2" pname="e" oct="5"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="36"><staff xml:id="m36s1" n="1">
+                        <layer xml:id="m36s1l1" n="1">
+                           <mRest xml:id="m1jlm0xy"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m36s1" n="2">
+                        <layer xml:id="m36s1l1" n="1">
+                           <note xml:id="n1lihxln" dur="4" pname="e" oct="5"/>
+                           <note xml:id="n176m67j" dur="8" pname="d" oct="5"/>
+                           <rest xml:id="r4bsb8t" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="37"><staff xml:id="m37s1" n="1">
+                        <layer xml:id="m37s1l1" n="1">
+                           <beam>
+                              <note xml:id="nwe4pfo" dur="8" pname="a" oct="2"/>
+                              <note xml:id="n1rzzac5" dur="8" pname="e" oct="3"/>
+                              <note xml:id="n20kk94" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="n1lh31z4" dots="1" dur="4" pname="e" oct="3">
+                              <artic xml:id="a1fctm2z" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m37s1" n="2">
+                        <layer xml:id="m37s1l1" n="1">
+                           <note xml:id="n21ujwu" dots="1" dur="4" pname="d" oct="5"/>
+                           <note xml:id="n1idxbtf" dots="1" dur="4" pname="a" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="38"><staff xml:id="m38s1" n="1">
+                        <layer xml:id="m38s1l1" n="1">
+                           <mRest xml:id="m14ht8aq"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m38s1" n="2">
+                        <layer xml:id="m38s1l1" n="1">
+                           <mRest xml:id="mrr6g9z"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="39"><staff xml:id="m39s1" n="1">
+                        <layer xml:id="m39s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1ls2fec" dur="8" pname="a" oct="3"/>
+                              <note xml:id="nuu1faf" dur="8" pname="g" oct="3"/>
+                              <note xml:id="nuz3xkt" dur="8" pname="a" oct="2"/>
+                           </beam>
+                           <rest xml:id="r1m2ld37" dots="1" dur="4"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m39s1" n="2">
+                        <layer xml:id="m39s1l1" n="1">
+                           <note xml:id="n1zxdkk" dots="1" dur="4" pname="c" oct="5"/>
+                           <note xml:id="n1lzwpsg" dur="4" pname="e" oct="4"/>
+                           <note xml:id="nr0lblb" dur="8" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="40"><staff xml:id="m40s1" n="1">
+                        <layer xml:id="m40s1l1" n="1">
+                           <mRest xml:id="m8acj6h"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m40s1" n="2">
+                        <layer xml:id="m40s1l1" n="1">
+                           <mRest xml:id="m1rd22xu"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="41"><staff xml:id="m41s1" n="1">
+                        <layer xml:id="m41s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1ri50yj" dur="8" pname="f" oct="2"/>
+                              <note xml:id="n10uhjgw" dur="8" pname="g" oct="3"/>
+                              <note xml:id="npd7vfr" dur="8" pname="f" oct="3"/>
+                           </beam>
+                           <note xml:id="nvcqxpq" dots="1" dur="4" pname="c" oct="3">
+                              <artic xml:id="ad7j4nm" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m41s1" n="2">
+                        <layer xml:id="m41s1l1" n="1">
+                           <note xml:id="n94xyxl" dots="1" dur="4" pname="a" oct="4"/>
+                           <note xml:id="nzer53j" dots="1" dur="4" pname="a" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="42"><staff xml:id="m42s1" n="1">
+                        <layer xml:id="m42s1l1" n="1">
+                           <mRest xml:id="m59ensq"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m42s1" n="2">
+                        <layer xml:id="m42s1l1" n="1">
+                           <mRest xml:id="m11h80wk"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="43"><staff xml:id="m43s1" n="1">
+                        <layer xml:id="m43s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1og9cuu" dur="8" pname="f" oct="2"/>
+                              <note xml:id="nugys3t" dur="8" pname="c" oct="3"/>
+                              <note xml:id="nx7c48v" dur="8" pname="f" oct="3"/>
+                           </beam>
+                           <beam>
+                              <note xml:id="n1pk6ixe" dur="8" pname="a" oct="3"/>
+                              <note xml:id="nna6seq" dur="8" pname="f" oct="3"/>
+                              <note xml:id="nqsaof8" dur="8" pname="a" oct="2"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m43s1" n="2">
+                        <layer xml:id="m43s1l1" n="1">
+                           <note xml:id="n18zo9pa" dots="1" dur="4" pname="a" oct="4"/>
+                           <note xml:id="nhqx6m4" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1a608sa" dur="8" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="44"><staff xml:id="m44s1" n="1">
+                        <layer xml:id="m44s1l1" n="1">
+                           <mRest xml:id="maj6fg"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m44s1" n="2">
+                        <layer xml:id="m44s1l1" n="1">
+                           <mRest xml:id="momvmxr"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="45"><staff xml:id="m45s1" n="1">
+                        <layer xml:id="m45s1l1" n="1">
+                           <beam>
+                              <note xml:id="n194c8w0" dur="8" pname="a" oct="2"/>
+                              <note xml:id="nr4s1d4" dur="8" pname="e" oct="3"/>
+                              <note xml:id="npqt7ue" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="nb1ffih" dots="1" dur="4" pname="e" oct="3">
+                              <artic xml:id="a8npo93" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m45s1" n="2">
+                        <layer xml:id="m45s1l1" n="1">
+                           <note xml:id="ncplmhj" dots="1" dur="4" pname="e" oct="4"/>
+                           <note xml:id="n17ir5h" dots="1" dur="4" pname="e" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="46"><staff xml:id="m46s1" n="1">
+                        <layer xml:id="m46s1l1" n="1">
+                           <mRest xml:id="mgs8ws2"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m46s1" n="2">
+                        <layer xml:id="m46s1l1" n="1">
+                           <mRest xml:id="m14p0m43"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="47"><staff xml:id="m47s1" n="1">
+                        <layer xml:id="m47s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1dhsm1o" dur="8" pname="a" oct="2"/>
+                              <note xml:id="n1gveo10" dur="8" pname="e" oct="3"/>
+                              <note xml:id="nki1ug1" dur="8" pname="f" oct="3"/>
+                           </beam>
+                           <note xml:id="n1snkszl" dur="8" pname="a" oct="3"/>
+                           <note xml:id="njjihal" dur="4" pname="a" oct="2">
+                              <artic xml:id="a1jc281l" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m47s1" n="2">
+                        <layer xml:id="m47s1l1" n="1">
+                           <note xml:id="nl61se7" dots="1" dur="4" pname="g" oct="4"/>
+                           <note xml:id="nlvs9k9" dur="4" pname="e" oct="4"/>
+                           <note xml:id="n1stg90r" dur="8" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="48"><staff xml:id="m48s1" n="1">
+                        <layer xml:id="m48s1l1" n="1">
+                           <mRest xml:id="m1czlecm"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m48s1" n="2">
+                        <layer xml:id="m48s1l1" n="1">
+                           <mRest xml:id="mylkodn"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="49"><staff xml:id="m49s1" n="1">
+                        <layer xml:id="m49s1l1" n="1">
+                           <beam>
+                              <note xml:id="ni9865v" dur="8" pname="f" oct="2"/>
+                              <note xml:id="n15014u0" dur="8" pname="g" oct="3"/>
+                              <note xml:id="n1ytidso" dur="8" pname="f" oct="3"/>
+                           </beam>
+                           <note xml:id="n1nmj7w7" dur="8" pname="e" oct="3"/>
+                           <note xml:id="n9o7vvq" dur="4" pname="a" oct="2">
+                              <artic xml:id="a18tz4r0" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m49s1" n="2">
+                        <layer xml:id="m49s1l1" n="1">
+                           <note xml:id="nujbdxe" dots="1" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1dig7y1" dots="1" dur="4" pname="a" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="50"><staff xml:id="m50s1" n="1">
+                        <layer xml:id="m50s1l1" n="1">
+                           <mRest xml:id="m3ik04k"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m50s1" n="2">
+                        <layer xml:id="m50s1l1" n="1">
+                           <mRest xml:id="m1l88ti5"/>
+                        </layer>
+                     </staff>
+                  </measure><measure n="51"><staff xml:id="m51s1" n="1">
+                        <layer xml:id="m51s1l1" n="1">
+                           <beam>
+                              <note xml:id="nsyjrwv" dur="8" pname="f" oct="2"/>
+                              <note xml:id="nuio5y3" dur="8" pname="f" oct="3"/>
+                              <note xml:id="n129rplj" dur="8" pname="a" oct="3"/>
+                           </beam>
+                           <note xml:id="nzub7ak" dur="8" pname="f" oct="3"/>
+                           <note xml:id="nta2j70" dur="4" pname="a" oct="2">
+                              <artic xml:id="a4ddhoc" artic="stacc"/>
+                           </note>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m51s1" n="2">
+                        <layer xml:id="m51s1l1" n="1">
+                           <note xml:id="nrjkhke" dots="1" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1k2mld" dur="4" pname="a" oct="4"/>
+                           <note xml:id="n1ggjcpa" dur="8" pname="g" oct="4"/>
+                        </layer>
+                     </staff>
+                  </measure></section></score>
+         </mdiv>
+      </body>
+   </music>
+</mei>

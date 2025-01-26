@@ -67,6 +67,12 @@ def extract_staves(sheet_music_path, output_dir):
 
     staves = []
 
+    if len(os.listdir(output_dir)) > 0:
+        for filename in os.listdir(output_dir):
+            file_path = os.path.join(output_dir, filename)
+            os.remove(file_path)
+        print(f"Deleted all contents of {output_dir}.")
+
     # Step 4: Process each valid contour
     for stave_index, contour in enumerate(valid_contours):
         try:
