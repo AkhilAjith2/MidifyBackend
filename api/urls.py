@@ -2,7 +2,8 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import UploadViewSet, ProfileView, UploadHistoryView, RegisterUserView, CustomObtainAuthToken, LoginView, test_view, get_csrf_token, FetchImage, FetchMIDI
+from .views import UploadViewSet, ProfileView, UploadHistoryView, RegisterUserView, CustomObtainAuthToken, LoginView, \
+    test_view, get_csrf_token, FetchImage, FetchMIDI, SignupView
 from rest_framework.authtoken.views import obtain_auth_token
 from django.views.decorators.csrf import csrf_exempt
 
@@ -17,6 +18,7 @@ urlpatterns = [
     path('history/<int:upload_id>/fetch-midi/', FetchMIDI.as_view(), name='fetch_midi'),
     path('register/', RegisterUserView.as_view(), name='register'),
     path('auth/login/', csrf_exempt(LoginView.as_view()), name='custom_login'),
+    path('auth/signup/', csrf_exempt(SignupView.as_view()), name='custom_signup'),
     path('test/', test_view),
     path('csrf-token/', get_csrf_token, name='csrf_token'),
 ]

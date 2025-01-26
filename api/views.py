@@ -184,8 +184,9 @@ class UploadViewSet(viewsets.ModelViewSet):
 
         return Response({"error": "Converted MIDI file not found."}, status=status.HTTP_404_NOT_FOUND)
 
-# ViewSet for managing profiles
+
 class ProfileView(APIView):
+    """ ViewSet for managing profiles """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -282,7 +283,58 @@ class LoginView(APIView):
 
         return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
+class SignupView(APIView):
+    def post(self, request, *args, **kwargs):
+        # Extract data from the request
+        first_name = request.data.get('first_name')
+        last_name = request.data.get('last_name')
+        username = request.data.get('username')
+        email = request.data.get('email')
+        password = request.data.get('password')
 
+        # Validate required fields
+        if not all([first_name, last_name, username, email, password]):
+            return Response({"error": "All fields are required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Check if the username or email is already taken
+        if User.objects.filter(username=username).exists():
+            return Response({"error": "Username is already taken."}, status=status.HTTP_400_BAD_REQUEST)
+        if User.objects.filter(email=email).exists():
+            return Response({"error": "Email is already registered."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Create the user
+        try:
+            user = User.objects.create_user(
+                username=username,
+                password=password,
+                email=email,
+                first_name=first_name,
+                last_name=last_name
+            )
+            # Create a Profile for the user
+            Profile.objects.create(
+                user=user,
+                first_name=first_name,
+                last_name=last_name,
+                email=email
+            )
+
+            # Generate a token for the new user
+            token, _ = Token.objects.get_or_create(user=user)
+
+            return Response(
+                {
+                    "message": "User created successfully.",
+                    "token": token.key,
+                },
+                status=status.HTTP_201_CREATED
+            )
+
+        except Exception as e:
+            return Response(
+                {"error": f"An error occurred while creating the user: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 def test_view(request):
     print("Request received:", request)
     return JsonResponse({"message": "Test endpoint reached"})

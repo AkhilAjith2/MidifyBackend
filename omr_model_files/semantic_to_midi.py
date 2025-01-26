@@ -38,6 +38,7 @@ def calculate_duration(note_duration, numerator):
 
 def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4"):
     """Convert semantic data to MIDI."""
+
     numerator, denominator = map(int, time_signature.split('/'))
     note_value_per_beat = 4 / denominator
     seconds_per_beat = (60 / tempo)
@@ -51,7 +52,7 @@ def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4")
     midi.time_signature_changes.append(pretty_midi.TimeSignature(numerator=numerator, denominator=denominator, time=0.0))
 
     current_time = 0
-    measure_accumulated_duration = 0  # Tracks accumulated duration within a measure
+    measure_accumulated_duration = 0
 
     for element in semantic_data:
         if element.startswith('note-') or element.startswith('rest-'):
@@ -68,7 +69,6 @@ def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4")
                 # Check if adding the note exceeds the measure duration
                 if measure_accumulated_duration + duration > seconds_per_measure:
                     remaining_duration = seconds_per_measure - measure_accumulated_duration
-                    # Truncate the note to fit the remaining time
                     if remaining_duration > 0:
                         end_time = current_time + remaining_duration
                         note = pretty_midi.Note(velocity=100, pitch=midi_note, start=current_time, end=end_time)
@@ -89,27 +89,24 @@ def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4")
                 # Check if adding the rest exceeds the measure duration
                 if measure_accumulated_duration + rest_duration > seconds_per_measure:
                     remaining_duration = seconds_per_measure - measure_accumulated_duration
-                    # Truncate the rest to fit the remaining time
                     if remaining_duration > 0:
                         current_time += remaining_duration
                     measure_accumulated_duration = seconds_per_measure
                     continue
 
-                # Add the rest as is
+                # Add the rest
                 current_time += rest_duration
                 measure_accumulated_duration += rest_duration
 
         elif element.startswith('barline'):
             # Finalize the current measure
             if measure_accumulated_duration < seconds_per_measure:
-                # Fill remaining time with rest
                 remaining_duration = seconds_per_measure - measure_accumulated_duration
                 current_time += remaining_duration
                 print(f"Filling measure with {remaining_duration:.2f} seconds of rest.")
             # Reset measure accumulator for the next measure
             measure_accumulated_duration = 0
 
-    # Write the MIDI file
     midi.write(output_file)
     print(f"MIDI file created successfully: {output_file}")
 
