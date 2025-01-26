@@ -3,11 +3,6 @@
 from rest_framework import serializers
 from .models import Upload, Profile
 
-# class UploadSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Upload
-#         fields = ['id', 'file', 'uploaded_at', 'status', 'converted_file', 'converted_mei_file']
-#
 
 class UploadSerializer(serializers.ModelSerializer):
     class Meta:

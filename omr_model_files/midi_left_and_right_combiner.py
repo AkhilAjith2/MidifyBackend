@@ -6,14 +6,12 @@ def merge_midi_files(midi_file1, midi_file2, output_file):
     midi1 = pretty_midi.PrettyMIDI(midi_file1)
     midi2 = pretty_midi.PrettyMIDI(midi_file2)
 
-    # Create a new PrettyMIDI object to store the merged data
     merged_midi = pretty_midi.PrettyMIDI()
 
-    # Append all instruments from the first MIDI file to the merged MIDI
+    # Append all instruments from both MIDI files to the merged MIDI
     for instrument in midi1.instruments:
         merged_midi.instruments.append(instrument)
 
-    # Append all instruments from the second MIDI file to the merged MIDI
     for instrument in midi2.instruments:
         merged_midi.instruments.append(instrument)
 
@@ -22,17 +20,8 @@ def merge_midi_files(midi_file1, midi_file2, output_file):
     print(f"Merged MIDI file created successfully: {output_file}")
 
 def merge_multiple_midi_files(midi_files, output_file):
-    """
-    Merges multiple MIDI files sequentially (one after another).
+    """ Merges multiple MIDI files sequentially (one after another)."""
 
-    Parameters:
-    midi_files (list of str): List of paths to MIDI files to merge.
-    output_file (str): Path to save the merged MIDI file.
-
-    Returns:
-    str: Path to the merged MIDI file.
-    """
-    # Create a new PrettyMIDI object to store the merged data
     merged_midi = pretty_midi.PrettyMIDI()
 
     # Track the current offset to place each MIDI file sequentially

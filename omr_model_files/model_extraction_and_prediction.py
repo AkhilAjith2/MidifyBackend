@@ -40,20 +40,19 @@ def sparse_tensor_to_strs(sparse_tensor):
     return strs
 
 def extract_staves(sheet_music_path, output_dir):
-    # Step 1: Read the input image
     image = cv2.imread(sheet_music_path, cv2.IMREAD_GRAYSCALE)
     if image is None:
         print(f"Error: Unable to read image from {sheet_music_path}.")
         return []
 
-    # Step 2: Threshold and preprocess
+    # Threshold and preprocess
     _, binary = cv2.threshold(image, 128, 255, cv2.THRESH_BINARY_INV)
     horizontal_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (40, 1))
     connected_lines = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, horizontal_kernel, iterations=2)
     contours, _ = cv2.findContours(connected_lines, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     sorted_contours = sorted(contours, key=lambda c: cv2.boundingRect(c)[1])
 
-    # Step 3: Determine valid contours
+    # Determine valid contours
     widths = [cv2.boundingRect(c)[2] for c in sorted_contours]  # Extract widths of contours
     print("Widths", widths)
     dominant_width = max(widths)
@@ -67,7 +66,7 @@ def extract_staves(sheet_music_path, output_dir):
 
     staves = []
 
-    # Step 4: Process each valid contour
+    #Process each valid contour
     for stave_index, contour in enumerate(valid_contours):
         try:
             x, y, w, h = cv2.boundingRect(contour)
@@ -130,45 +129,36 @@ def preprocess_image(image):
     """
     Preprocesses an image to enhance black vertical barlines for reliable detection.
     """
-    # Step 1: Adaptive Thresholding
+    # Adaptive Thresholding
     binary_image = cv2.adaptiveThreshold(
         image, maxValue=255, adaptiveMethod=cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
         thresholdType=cv2.THRESH_BINARY_INV, blockSize=11, C=2
     )
 
-    # Step 2: Enhance Vertical Lines
+    # Enhance Vertical Lines
     vertical_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 50))  # Tall and narrow kernel
     vertical_lines = cv2.morphologyEx(binary_image, cv2.MORPH_OPEN, vertical_kernel)
 
-    # Step 3: Noise Removal (with sigmaX)
     denoised_image = cv2.GaussianBlur(vertical_lines, (5, 5), 0)
 
-    # Step 4: Edge Detection
+    # Edge Detection
     edges = cv2.Canny(denoised_image, 50, 150)
 
     return edges
 
 
 def crop_to_first_and_last_vertical_line(image):
-    """
-    Crops the original image to include only the region between the first and last vertical barlines.
-    Uses a preprocessed version of the image to find the barlines.
-
-    Parameters:
-    - image: Grayscale image of the stave.
-
-    Returns:
-    - cropped_image: Image cropped between the first and last vertical barlines, or the original image.
-    """
-    # Step 1: Preprocess the image to enhance vertical barlines
+    """ Crops the original image to include only the region between the first and last vertical barlines.
+    Uses a preprocessed version of the image to find the barlines. """
+    # Preprocess the image to enhance vertical barlines
     preprocessed_image = preprocess_image(image)
 
-    # Step 2: Detect vertical lines and find contours
+    # Detect vertical lines and find contours
     contours, _ = cv2.findContours(preprocessed_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # Initialize min_x and max_x
-    min_x = image.shape[1]  # Initialize to the far right (maximum width)
-    max_x = 0  # Initialize to the far left (minimum width)
+    min_x = image.shape[1]
+    max_x = 0
 
     # Identify the leftmost and rightmost vertical lines
     for contour in contours:
@@ -180,7 +170,6 @@ def crop_to_first_and_last_vertical_line(image):
             if x + w > max_x:
                 max_x = x + w
 
-    # Step 3: Validate and crop the original image
     cropped_image = image[:, min_x + 5:max_x - 5]
     if image.shape[0] >= 50 and image.shape[1] >= 400:
         return cropped_image
@@ -189,57 +178,38 @@ def crop_to_first_and_last_vertical_line(image):
 
 
 def quantize_image(image, num_colors):
-    """
-    Quantizes a grayscale or color image to a specified number of colors.
-    Clamps the first range to 0 and the last range to 255.
+    """ Quantizes a grayscale or color image to a specified number of colors.
+    Clamps the first range to 0 and the last range to 255. """
 
-    Parameters:
-    - image: Input image (color or grayscale).
-    - num_colors: Number of colors to reduce the image to.
-    - save_path: Path to save the processed image (optional).
-
-    Returns:
-    - processed_image: Grayscale image with quantized values.
-    """
-    # Step 1: Convert the image to grayscale if it is not already
     grayscale_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
 
-    # Step 2: Define the intensity ranges
-    intensity_range = 256 // num_colors  # Calculate the range for each quantized level
+    # Define the intensity ranges
+    intensity_range = 256 // num_colors
 
-    # Step 3: Initialize the processed image
+    # Initialize the processed image
     processed_image = np.zeros_like(grayscale_image)
 
-    # Step 4: Apply quantization
+    # Apply quantization
     for i in range(num_colors):
         lower_bound = i * intensity_range
         upper_bound = (i + 1) * intensity_range
 
-        if i == 0:  # First range: Clamp to 0
+        if i == 0:
             processed_image[(grayscale_image >= lower_bound) & (grayscale_image < upper_bound)] = 0
-        elif i == num_colors - 1:  # Last range: Clamp to 255
+        elif i == num_colors - 1:
             processed_image[(grayscale_image >= lower_bound) & (grayscale_image <= upper_bound)] = 255
-        else:  # Middle ranges: Use midpoints
+        else:
             midpoint = lower_bound + intensity_range // 2
             processed_image[(grayscale_image >= lower_bound) & (grayscale_image < upper_bound)] = midpoint
     return processed_image
 
 
 def find_white_pixel_rows(image):
-    """
-    Finds rows in a binary image that contain only white pixels.
-
-    Parameters:
-    - image: Grayscale binary image (white=255, black=0).
-
-    Returns:
-    - List of row indices containing only white pixels.
-    """
-    # Ensure the image is binary
+    """ Finds rows in a binary image that contain only white pixels."""
     _, binary = cv2.threshold(image, 128, 255, cv2.THRESH_BINARY)
 
-    # Calculate the row sums
-    row_sums = np.sum(binary == 255, axis=1)  # Count white pixels per row
+    # Count white pixels per row
+    row_sums = np.sum(binary == 255, axis=1)
 
     # A row with all white pixels will have a sum equal to the image width
     all_white_value = binary.shape[1]
@@ -248,18 +218,8 @@ def find_white_pixel_rows(image):
     return white_pixel_rows
 
 def find_row_with_max_white_pixels(image, middle_row, search_range):
-    """
-    Finds the row with the maximum number of white pixels near the middle of the image.
+    """ Finds the row with the maximum number of white pixels near the middle of the image. """
 
-    Parameters:
-    - image: Grayscale binary image (white=255, black=0).
-    - middle_row: The approximate middle row of the image.
-    - search_range: The range above and below the middle row to search.
-
-    Returns:
-    - best_row: The row index with the maximum number of white pixels near the middle.
-    """
-    # Ensure the image is binary
     quantized_image = quantize_image(image,num_colors=4)
 
     # Define the search region
@@ -276,7 +236,6 @@ def find_row_with_max_white_pixels(image, middle_row, search_range):
             max_white_pixels = white_pixel_count
             best_row = row
 
-    # Step 4: Fallback in case no valid row is found
     if max_white_pixels == 0:
         print("No significant white pixel row found. Returning middle_row.")
         return middle_row
@@ -285,17 +244,7 @@ def find_row_with_max_white_pixels(image, middle_row, search_range):
     return best_row
 
 def find_stave_top(image, max_rows=50, min_black_pixels=10):
-    """
-    Finds the first row with significant black pixel density to determine the top of the stave area.
-
-    Parameters:
-    - image: Grayscale binary image (white=255, black=0).
-    - max_rows: Maximum number of rows to scan from the top.
-    - min_black_pixels: Minimum number of black pixels in a row to consider it part of the stave.
-
-    Returns:
-    - top_row: The row index of the first significant stave line or note.
-    """
+    """ Finds the first row with significant black pixel density to determine the top of the stave area. """
     # Ensure the image is binary
     _, binary = cv2.threshold(image, 128, 255, cv2.THRESH_BINARY)
 
@@ -312,21 +261,15 @@ def find_trim_row_dynamic(image):
     """
     Dynamically finds the ideal row to trim unnecessary white space from the top,
     based on the largest change in black pixel count.
-
-    Parameters:
-    - image: Grayscale binary image (white=255, black=0).
-
-    Returns:
-    - trim_row: The row index where trimming should start.
     """
     # Ensure the image is binary
     _, binary = cv2.threshold(image, 128, 255, cv2.THRESH_BINARY)
 
-    # Step 2: Analyze rows from the top to the first stave line
+    # Analyze rows from the top
     trim_row = 0
     previous_black_pixel_count = np.sum(binary[0, :] == 0)  # Black pixels in the first row
 
-    # Iterate through rows to find the first significant change
+    # Iterate through rows to find the first change in black pixel count.
     for row in range(binary.shape[0]):
         current_black_pixel_count = np.sum(binary[row, :] == 0)
         print("Current black pixel count",current_black_pixel_count)

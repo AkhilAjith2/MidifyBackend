@@ -50,14 +50,7 @@ def predict(image_path, model_path, voc_file):
     return semantic_list
 
 def evaluate_model(test_file, corpus_dir, model_path, voc_file):
-    """
-        Evaluate the model's predictions with a tolerance for mismatches.
-        Args:
-            test_file (str): Path to the test.txt file.
-            corpus_dir (str): Path to the corpus directory.
-            model_path (str): Path to the model checkpoint file.
-            voc_file (str): Path to the vocabulary file.
-        """
+    """ Evaluate the model's predictions with a tolerance for mismatches."""
     with open(test_file, 'r') as file:
         test_subdirectories = file.read().splitlines()
 
@@ -113,7 +106,7 @@ def evaluate_model(test_file, corpus_dir, model_path, voc_file):
         plt.xlabel("Number of Mismatches")
         plt.ylabel("Frequency")
         plt.text(
-            max(x) * 0.7, max(y) * 0.9,  # Position the accuracy text
+            max(x) * 0.7, max(y) * 0.9,
             f"Accuracy: {accuracy:.2%}",
             fontsize=12,
             color="blue",
