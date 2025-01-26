@@ -184,8 +184,9 @@ class UploadViewSet(viewsets.ModelViewSet):
 
         return Response({"error": "Converted MIDI file not found."}, status=status.HTTP_404_NOT_FOUND)
 
-# ViewSet for managing profiles
+
 class ProfileView(APIView):
+    """ ViewSet for managing profiles """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):

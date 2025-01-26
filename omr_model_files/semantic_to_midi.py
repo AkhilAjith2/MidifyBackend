@@ -38,9 +38,11 @@ def calculate_duration(note_duration, numerator):
 
 def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4"):
     """Convert semantic data to MIDI."""
+
     numerator, denominator = map(int, time_signature.split('/'))
-    beats_per_measure = numerator
-    seconds_per_beat = 60 / tempo
+    note_value_per_beat = 4 / denominator
+    seconds_per_beat = (60 / tempo)
+    beats_per_measure = numerator * note_value_per_beat
     seconds_per_measure = beats_per_measure * seconds_per_beat
 
     # Create a PrettyMIDI object

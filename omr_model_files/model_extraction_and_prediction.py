@@ -118,9 +118,6 @@ def extract_staves(sheet_music_path, output_dir):
     return staves
 
 
-
-
-
 def preprocess_image(image):
     """
     Preprocesses an image to enhance black vertical barlines for reliable detection.
