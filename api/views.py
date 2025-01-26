@@ -286,8 +286,8 @@ class LoginView(APIView):
 class SignupView(APIView):
     def post(self, request, *args, **kwargs):
         # Extract data from the request
-        first_name = request.data.get('first_name')
-        last_name = request.data.get('last_name')
+        first_name = request.data.get('firstName')
+        last_name = request.data.get('lastName')
         username = request.data.get('username')
         email = request.data.get('email')
         password = request.data.get('password')
