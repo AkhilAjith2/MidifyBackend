@@ -13,7 +13,6 @@ def convert_midi_to_mei_with_musescore(midi_file, mei_output_file):
     ]
 
     try:
-        # Run the command
         subprocess.run(command, check=True)
         print(f"MEI file successfully created: {mei_output_file}")
     except subprocess.CalledProcessError as e:
@@ -28,7 +27,6 @@ def merge_mei_files(left_hand_file, right_hand_file, time_signature, output_file
     left_tree = etree.parse(left_hand_file)
     right_tree = etree.parse(right_hand_file)
 
-    # Get the root elements
     left_root = left_tree.getroot()
     right_root = right_tree.getroot()
 
@@ -49,13 +47,12 @@ def merge_mei_files(left_hand_file, right_hand_file, time_signature, output_file
     left_staff_def = left_score.find(".//mei:staffDef", namespaces=ns)
     right_staff_def = right_score.find(".//mei:staffDef", namespaces=ns)
 
-    # Parse the time signature
     try:
         numerator, denominator = map(int, time_signature.split("/"))
     except ValueError:
         raise ValueError("Invalid time signature format. Use 'numerator/denominator' (e.g., '3/4').")
 
-    # Update the staff numbers, labels, and time signature
+    # Update the staff numbers, labels, and time signature for both staffs
     if left_staff_def is not None:
         left_staff_def.set("n", "1")
         left_staff_def.set("meter.count", str(numerator))
@@ -73,10 +70,8 @@ def merge_mei_files(left_hand_file, right_hand_file, time_signature, output_file
     if left_staff_def is not None:
         staff_grp.append(left_staff_def)
 
-    # Insert the new <staffGrp> into the left-hand <scoreDef>
     left_score_def = left_score.find(".//mei:scoreDef", namespaces=ns)
     if left_score_def is not None:
-        # Ensure no duplicate <staffGrp> is added
         existing_staff_grp = left_score_def.find(".//mei:staffGrp", namespaces=ns)
         if existing_staff_grp is not None:
             left_score_def.remove(existing_staff_grp)
@@ -92,7 +87,6 @@ def merge_mei_files(left_hand_file, right_hand_file, time_signature, output_file
             if label_abbr is not None:
                 staff_def.remove(label_abbr)
 
-    # Create a new <section> for the combined measures
     combined_section = etree.Element("{http://www.music-encoding.org/ns/mei}section")
 
     # Iterate through measures and merge them
@@ -104,19 +98,18 @@ def merge_mei_files(left_hand_file, right_hand_file, time_signature, output_file
         measure_number = left_measure.get("n")
         combined_measure = etree.Element("{http://www.music-encoding.org/ns/mei}measure", attrib={"n": measure_number})
 
-        # Append left-hand staff with n="1"
+
         left_staff = left_measure.find(".//mei:staff", namespaces=ns)
         if left_staff is not None:
             left_staff.set("n", "1")
             combined_measure.append(left_staff)
 
-        # Append right-hand staff with n="2"
+
         right_staff = right_measure.find(".//mei:staff", namespaces=ns)
         if right_staff is not None:
             right_staff.set("n", "2")
             combined_measure.append(right_staff)
 
-        # Add the combined measure to the new section
         combined_section.append(combined_measure)
 
     # Replace the original left-hand section with the combined section

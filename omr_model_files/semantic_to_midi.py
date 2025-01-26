@@ -37,6 +37,7 @@ def calculate_duration(note_duration, numerator):
     return base_duration
 
 def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4"):
+    """Convert semantic data to MIDI."""
     numerator, denominator = map(int, time_signature.split('/'))
     note_value_per_beat = 4 / denominator
     seconds_per_beat = (60 / tempo)
@@ -67,15 +68,16 @@ def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4")
                 # Check if adding the note exceeds the measure duration
                 if measure_accumulated_duration + duration > seconds_per_measure:
                     remaining_duration = seconds_per_measure - measure_accumulated_duration
-                    if remaining_duration > 0:  # Truncate the note to fit the remaining time
+                    # Truncate the note to fit the remaining time
+                    if remaining_duration > 0:
                         end_time = current_time + remaining_duration
                         note = pretty_midi.Note(velocity=100, pitch=midi_note, start=current_time, end=end_time)
                         piano.notes.append(note)
                         current_time = end_time
                     measure_accumulated_duration = seconds_per_measure
-                    continue  # Move to the next element since this measure is complete
+                    continue
 
-                # Add the note as is
+                # Add the note
                 end_time = current_time + duration
                 note = pretty_midi.Note(velocity=100, pitch=midi_note, start=current_time, end=end_time)
                 piano.notes.append(note)
@@ -84,14 +86,14 @@ def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4")
 
             elif note_type == 'rest':
                 rest_duration = calculate_duration(note_info, numerator) * seconds_per_beat
-
                 # Check if adding the rest exceeds the measure duration
                 if measure_accumulated_duration + rest_duration > seconds_per_measure:
                     remaining_duration = seconds_per_measure - measure_accumulated_duration
-                    if remaining_duration > 0:  # Truncate the rest to fit the remaining time
+                    # Truncate the rest to fit the remaining time
+                    if remaining_duration > 0:
                         current_time += remaining_duration
                     measure_accumulated_duration = seconds_per_measure
-                    continue  # Move to the next element since this measure is complete
+                    continue
 
                 # Add the rest as is
                 current_time += rest_duration
@@ -111,16 +113,9 @@ def semantic_to_midi(semantic_data, output_file, tempo=74, time_signature="4/4")
     midi.write(output_file)
     print(f"MIDI file created successfully: {output_file}")
 
+
 def remove_extra_metadata(predictions):
-    """
-    Remove extra occurrences of clefs, time signatures, and key signatures from the prediction data.
-
-    Args:
-        predictions (list): List of musical elements in the data.
-
-    Returns:
-        list: Cleaned list with only the first occurrences of clefs, time signatures, and key signatures.
-    """
+    """ Remove extra occurrences of clefs, time signatures, and key signatures from the prediction data."""
     metadata = {"clef", "timeSignature", "keySignature"}
     seen_metadata = set()
     cleaned_predictions = []

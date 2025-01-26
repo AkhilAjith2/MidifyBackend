@@ -76,8 +76,7 @@ def pad_sequences(sequences, maxlen=None, dtype=np.float32,
     if maxlen is None:
         maxlen = np.max(lengths)
 
-    # take the sample shape from the first non empty sequence
-    # checking for consistency in the main loop below.
+
     sample_shape = tuple()
     for s in sequences:
         if len(s) > 0:
@@ -187,7 +186,7 @@ def scale(image, factor):
     new_height = int(height * factor)
     new_width = int(width * factor)
 
-    # Resize the image using OpenCV
+    # Resize the image
     resized_array = cv2.resize(image, (new_width, new_height), interpolation=cv2.INTER_LINEAR)
 
     # Calculate the padding to retain the original size

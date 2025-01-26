@@ -24,8 +24,9 @@ from django.shortcuts import get_object_or_404
 from django.http import FileResponse
 from django.core.cache import cache
 
-# ViewSet for managing uploads
+
 class UploadViewSet(viewsets.ModelViewSet):
+    """ ViewSet for managing uploads """
     queryset = Upload.objects.all()
     serializer_class = UploadSerializer
     permission_classes = [IsAuthenticated]
@@ -42,9 +43,8 @@ class UploadViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=["post"])
     def batch_convert(self, request):
-        """
-        Process multiple uploaded files, convert them, and merge their final MIDI files.
-        """
+        """ Process multiple uploaded files, convert them, and merge their final MIDI files. """
+
         file_ids = request.data.get("file_ids", [])
         tempo = float(request.data.get("tempo", 120))  # Default tempo
         time_signature = request.data.get("timeSignature", "4/4")  # Default time signature
@@ -59,14 +59,15 @@ class UploadViewSet(viewsets.ModelViewSet):
             for file_id in file_ids:
                 # Get the upload object
                 upload = Upload.objects.get(id=file_id)
+                # Skip files that are already processed or in progress
                 if upload.status != "pending":
-                    continue  # Skip files that are already processed or in progress
+                    continue
 
                 upload.status = "processing"
                 upload.save()
 
                 try:
-                    # Extract staves and process the file using existing logic
+                    # Extract staves and process the file
                     file_path = upload.file.path
                     output_dir = os.path.join(settings.MEDIA_ROOT, "extracted_staves")
                     final_midi_dir = os.path.join(settings.MEDIA_ROOT, "converted")
@@ -121,7 +122,7 @@ class UploadViewSet(viewsets.ModelViewSet):
                     upload.save()
 
                 except Exception as e:
-                    upload.status = "pending"  # Reset status on failure
+                    upload.status = "pending"
                     upload.save()
                     return Response({"error": f"Error processing file {file_id}: {str(e)}"},
                                     status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -129,10 +130,6 @@ class UploadViewSet(viewsets.ModelViewSet):
             # Merge all final MIDI files into a single file
             merged_midi_path = os.path.join(settings.MEDIA_ROOT, "converted", f"merged_batch_{first_file_id}.mid")
             merge_multiple_midi_files(final_midi_files, merged_midi_path)
-            #
-            # merged_mei_path = os.path.join(settings.MEDIA_ROOT, "mei", f"merged_{first_file_id}.mei")
-            # merge_mei_batches(final_mei_files, merged_mei_path)
-
             upload = Upload.objects.get(id=file_ids[0])
             upload.converted_file.name = os.path.relpath(merged_midi_path, settings.MEDIA_ROOT)
             upload.converted_mei_file.name = os.path.relpath(final_mei_files[0], settings.MEDIA_ROOT)
@@ -148,42 +145,43 @@ class UploadViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=["get"])
     def status(self, request, pk=None):
-        # Return the current status of the file, Check the status of a file conversion.
+        """ Return the current status of the file, Check the status of a file conversion. """
 
         upload = self.get_object()
         return Response({"status": upload.status}, status=status.HTTP_200_OK)
 
     @action(detail=True, methods=["get"])
     def mei(self, request, pk=None):
+        """ Endpoint for sending the correct MEI file to frontend """
+
         # Retrieve the upload object
         upload = self.get_object()
 
         # Check if the converted MIDI file exists
         if upload.converted_mei_file and os.path.exists(upload.converted_mei_file.path):
-            # Stream the file to the user
+            # Stream the correct MEI file to the user
             return FileResponse(
                 open(upload.converted_mei_file.path, "rb"),
-                filename=os.path.basename(upload.converted_mei_file.path),  # Sets the file name for the download
+                filename=os.path.basename(upload.converted_mei_file.path),
             )
 
-        # If the file doesn't exist, return an error response
-        return Response({"error": "Converted MIDI file not found."}, status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "Converted MEI file not found."}, status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=True, methods=["get"])
     def download(self, request, pk=None):
+        """ Endpoint for sending correct MIDI file to Frontend """
         # Retrieve the upload object
         upload = self.get_object()
 
         # Check if the converted MIDI file exists
         if upload.converted_file and os.path.exists(upload.converted_file.path):
-            # Stream the file to the user
+            # Stream the correct MIDI file to the user
             return FileResponse(
                 open(upload.converted_file.path, "rb"),
                 as_attachment=True,  # Forces download
                 filename=os.path.basename(upload.converted_file.path),  # Sets the file name for the download
             )
 
-        # If the file doesn't exist, return an error response
         return Response({"error": "Converted MIDI file not found."}, status=status.HTTP_404_NOT_FOUND)
 
 # ViewSet for managing profiles
