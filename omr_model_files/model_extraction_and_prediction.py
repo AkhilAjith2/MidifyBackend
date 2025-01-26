@@ -66,6 +66,12 @@ def extract_staves(sheet_music_path, output_dir):
 
     staves = []
 
+    if len(os.listdir(output_dir)) > 0:
+        for filename in os.listdir(output_dir):
+            file_path = os.path.join(output_dir, filename)
+            os.remove(file_path)
+        print(f"Deleted all contents of {output_dir}.")
+
     #Process each valid contour
     for stave_index, contour in enumerate(valid_contours):
         try:
@@ -100,16 +106,6 @@ def extract_staves(sheet_music_path, output_dir):
             # Save the trimmed images
             left_output_path = os.path.join(output_dir, f"stave_{stave_index}_left.png")
             right_output_path = os.path.join(output_dir, f"stave_{stave_index}_right.png")
-
-            # Avoid overwriting existing files
-            counter = 0
-            while os.path.exists(left_output_path):
-                left_output_path = os.path.join(output_dir, f"stave_{stave_index}_left_{counter}.png")
-                counter += 1
-            counter = 0
-            while os.path.exists(right_output_path):
-                right_output_path = os.path.join(output_dir, f"stave_{stave_index}_right_{counter}.png")
-                counter += 1
 
             cv2.imwrite(left_output_path, left_hand_trimmed)
             cv2.imwrite(right_output_path, right_hand)
