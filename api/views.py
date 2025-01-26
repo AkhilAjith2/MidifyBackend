@@ -302,7 +302,7 @@ class SignupView(APIView):
         if User.objects.filter(email=email).exists():
             return Response({"error": "Email is already registered."}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Create the user
+        # Create the user and generate token
         try:
             user = User.objects.create_user(
                 username=username,
@@ -311,15 +311,6 @@ class SignupView(APIView):
                 first_name=first_name,
                 last_name=last_name
             )
-            # Create a Profile for the user
-            Profile.objects.create(
-                user=user,
-                first_name=first_name,
-                last_name=last_name,
-                email=email
-            )
-
-            # Generate a token for the new user
             token, _ = Token.objects.get_or_create(user=user)
 
             return Response(
