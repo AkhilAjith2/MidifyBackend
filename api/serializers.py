@@ -2,7 +2,15 @@
 
 from rest_framework import serializers
 from .models import Upload, Profile
+from rest_framework.serializers import ModelSerializer
+from django.contrib.auth.models import User
 
+
+class UserSerializer(ModelSerializer):
+    """Serializer for the User model"""
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'first_name', 'last_name', 'email']
 
 class UploadSerializer(serializers.ModelSerializer):
     class Meta:
