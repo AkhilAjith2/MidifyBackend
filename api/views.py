@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import viewsets, status
 from .models import Upload, Profile
-from .serializers import UploadSerializer, ProfileSerializer, UploadHistorySerializer
+from .serializers import UploadSerializer, ProfileSerializer, UploadHistorySerializer, UserSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 from django.contrib.auth.models import User
@@ -75,7 +75,7 @@ class UploadViewSet(viewsets.ModelViewSet):
                     os.makedirs(final_midi_dir, exist_ok=True)
 
                     staves = extract_staves(file_path, output_dir)
-                    model_path = "omr_model_files/Camera-PrIMuS_hybrid_semantic_v1-10-10.meta"
+                    model_path = r"C:\Users\David Abraham\Desktop\Semester 7\Thesis\Midify-Backend\omr_model_files\Camera-PrIMuS_hybrid_semantic_v1-10-10.meta"
                     voc_path = "omr_model_files/vocabulary_semantic.txt"
 
                     left_predictions = []
@@ -186,20 +186,19 @@ class UploadViewSet(viewsets.ModelViewSet):
 
 
 class ProfileView(APIView):
-    """ ViewSet for managing profiles """
+    """ ViewSet for managing user profile details """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # Dynamically create a profile if it doesn't exist
-        profile, created = Profile.objects.get_or_create(user=request.user)
-        serializer = ProfileSerializer(profile)
+        # Get details of the currently authenticated user
+        user = request.user
+        serializer = UserSerializer(user)
         return Response(serializer.data)
 
     def put(self, request):
-        # Update user profile details.
-
-        profile = Profile.objects.get(user=request.user)
-        serializer = ProfileSerializer(profile, data=request.data, partial=True)
+        # Update user details
+        user = request.user
+        serializer = UserSerializer(user, data=request.data, partial=True)  # `partial=True` allows updating specific fields
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -302,7 +301,7 @@ class SignupView(APIView):
         if User.objects.filter(email=email).exists():
             return Response({"error": "Email is already registered."}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Create the user and generate token
+        # Create the user
         try:
             user = User.objects.create_user(
                 username=username,
@@ -311,6 +310,8 @@ class SignupView(APIView):
                 first_name=first_name,
                 last_name=last_name
             )
+
+            # Generate a token for the new user
             token, _ = Token.objects.get_or_create(user=user)
 
             return Response(
