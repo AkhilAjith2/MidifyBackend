@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0+basic">
+   <meiHead>
+      <fileDesc>
+         <titleStmt>
+            <title/>
+         </titleStmt>
+         <pubStmt>
+            <date isodate="2025-01-28T22:16:47"/>
+         </pubStmt>
+      </fileDesc>
+   </meiHead>
+   <music>
+      <body>
+         <mdiv>
+            <score>
+               <scoreDef>
+                  <staffGrp><staffDef n="2" lines="5" meter.count="4" meter.unit="4">
+                        <clef shape="F" line="4"/>
+                     </staffDef>
+                  <staffDef n="1" lines="5" meter.count="4" meter.unit="4">
+                        <clef shape="F" line="4"/>
+                     </staffDef>
+                  </staffGrp></scoreDef>
+               <section><measure n="1"><staff xml:id="m1s1" n="1">
+                        <layer xml:id="m1s1l1" n="1">
+                           <mRest xml:id="m13q3txy"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="m1s1" n="2">
+                        <layer xml:id="m1s1l1" n="1">
+                           <note xml:id="n1j2oogn" dur="4" pname="f" oct="3"/>
+                           <note xml:id="nwphoqe" dur="4" pname="a" oct="3"/>
+                           <note xml:id="nfh0tlf" dur="8" pname="c" oct="4"/>
+                           <note xml:id="n13yxig6" dur="4" pname="d" oct="2"/>
+                           <note xml:id="nf28oqe" dur="8" pname="a" oct="2"/>
+                        </layer>
+                     </staff>
+                     </measure><measure n="2"><staff xml:id="m2s1" n="1">
+                        <layer xml:id="m2s1l1" n="1">
+                           <note xml:id="n1brki9b" dur="4" pname="a" oct="2">
+                              <artic xml:id="a4ki5uy" artic="stacc"/>
+                           </note>
+                           <rest xml:id="r1os66oe" dur="4"/>
+                           <rest xml:id="r1xtlssr" dur="2"/>
+                        </layer>
+                     </staff>
+                  <staff xml:id="m2s1" n="2">
+                        <layer xml:id="m2s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1ohy9bf" dur="8" pname="c" oct="2"/>
+                              <note xml:id="n1kjvz0v" dur="8" pname="f" oct="3"/>
+                              <note xml:id="n14liaom" dur="8" pname="b" oct="2">
+                                 <accid xml:id="a443w6b" accid="f"/>
+                              </note>
+                              <note xml:id="nlu1p61" dur="8" pname="e" oct="3"/>
+                           </beam>
+                           <rest xml:id="r1m78zn1" dur="2"/>
+                        </layer>
+                     </staff>
+                  </measure></section></score>
+         </mdiv>
+      </body>
+   </music>
+</mei>

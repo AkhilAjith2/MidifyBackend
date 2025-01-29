@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-basic.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-basic.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0+basic">
+   <meiHead>
+      <fileDesc>
+         <titleStmt>
+            <title />
+         </titleStmt>
+         <pubStmt>
+            <date isodate="2025-01-28T23:00:30" />
+         </pubStmt>
+      </fileDesc>
+   </meiHead>
+   <music>
+      <body>
+         <mdiv>
+            <score>
+               <scoreDef>
+                  <staffGrp>
+                     <staffDef n="1" lines="5" keysig="1f" meter.count="4" meter.unit="4">
+                        <label>Piano</label>
+                        <labelAbbr>Pno.</labelAbbr>
+                        <clef shape="F" line="4" />
+                     </staffDef>
+                  </staffGrp>
+               </scoreDef>
+               <section xml:id="s1">
+                  <pb />
+                  <measure xml:id="m1vf8w29" n="1">
+                     <staff xml:id="m1s1" n="1">
+                        <layer xml:id="m1s1l1" n="1">
+                           <note xml:id="n1ss30yt" dur="4" pname="d" oct="3" />
+                           <beam>
+                              <note xml:id="n1lf3vh7" dur="8" pname="f" oct="3">
+                                 <accid xml:id="airlfsw" accid="s" />
+                              </note>
+                              <note xml:id="nqlyws" dur="16" pname="b" oct="3">
+                                 <accid accid.ges="f" />
+                              </note>
+                              <note xml:id="n125m4s0" dur="16" pname="a" oct="3" />
+                           </beam>
+                           <beam>
+                              <note xml:id="n1al0y87" dur="16" pname="f" oct="3">
+                                 <accid xml:id="a1nrrkzi" accid="n" />
+                              </note>
+                              <note xml:id="ntqgjhz" dur="16" pname="b" oct="3">
+                                 <accid xml:id="a1i5sbuc" accid="n" />
+                              </note>
+                              <note xml:id="nuhf7r0" dur="16" pname="d" oct="4" />
+                              <note xml:id="neahmk2" dur="16" pname="f" oct="3" />
+                           </beam>
+                           <beam>
+                              <note xml:id="n1qe3q9t" dur="16" pname="a" oct="3" />
+                              <note xml:id="n1t7aba7" dur="16" pname="g" oct="3" />
+                              <note xml:id="n1i45jpj" dur="8" pname="f" oct="3">
+                                 <artic xml:id="a11uv6t2" artic="stacc" />
+                              </note>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tempo xml:id="t1lmc9rz" staff="1" tstamp="1.000000" midi.bpm="120.000000">
+                        <rend glyph.auth="smufl"></rend> = 120</tempo>
+                  </measure>
+                  <measure xml:id="m16luwq4" right="end" n="2">
+                     <staff xml:id="m2s1" n="1">
+                        <layer xml:id="m2s1l1" n="1">
+                           <beam>
+                              <note xml:id="n1h4bqse" dur="16" pname="e" oct="3" />
+                              <note xml:id="njryp0i" dur="16" pname="c" oct="3" />
+                              <note xml:id="n1mhi9vu" dur="16" pname="g" oct="3" />
+                              <note xml:id="n1uarceo" dur="16" pname="e" oct="3" />
+                           </beam>
+                           <clef xml:id="cahp7gl" shape="G" line="2" />
+                           <beam>
+                              <note xml:id="n1v9iw6y" dur="16" pname="c" oct="4" />
+                              <note xml:id="nlas74w" dur="16" pname="g" oct="3" />
+                              <note xml:id="n1xiwvlq" dur="16" pname="c" oct="4" />
+                              <note xml:id="nngwn51" dur="16" pname="d" oct="4" />
+                           </beam>
+                           <beam>
+                              <note xml:id="n19ebem8" dur="16" pname="c" oct="4" />
+                              <clef xml:id="c10qye57" shape="F" line="4" />
+                              <note xml:id="nofxnig" dur="16" pname="b" oct="3">
+                                 <accid accid.ges="f" />
+                              </note>
+                              <note xml:id="nh1kpth" dur="16" pname="a" oct="3" />
+                              <note xml:id="nemq8gr" dur="16" pname="g" oct="3" />
+                           </beam>
+                           <beam>
+                              <note xml:id="nba1klg" dur="16" pname="f" oct="3">
+                                 <accid xml:id="a1899x34" accid="s" />
+                              </note>
+                              <note xml:id="n15ha261" dur="16" pname="e" oct="3" />
+                              <note xml:id="n1piasvk" dur="16" pname="d" oct="3" />
+                              <note xml:id="nquqd0p" dur="16" pname="d" oct="3" />
+                           </beam>
+                        </layer>
+                     </staff>
+                  </measure>
+               </section>
+            </score>
+         </mdiv>
+      </body>
+   </music>
+</mei>

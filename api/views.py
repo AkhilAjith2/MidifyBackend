@@ -75,7 +75,7 @@ class UploadViewSet(viewsets.ModelViewSet):
                     os.makedirs(final_midi_dir, exist_ok=True)
 
                     staves = extract_staves(file_path, output_dir)
-                    model_path = r"C:\Users\David Abraham\Desktop\Semester 7\Thesis\Midify-Backend\omr_model_files\Camera-PrIMuS_hybrid_semantic_v1-10-10.meta"
+                    model_path = "omr_model_files/Camera-PrIMuS_hybrid_semantic_v1-10-10.meta"
                     voc_path = "omr_model_files/vocabulary_semantic.txt"
 
                     left_predictions = []
