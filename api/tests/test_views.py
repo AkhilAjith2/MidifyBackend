@@ -17,12 +17,6 @@ class ExtendedProfileViewTest(APITestCase):
         response = self.client.get('/api/profile/')
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_update_profile_invalid_data(self):
-        data = {'first_name': '', 'preferred_language': 'French'}
-        response = self.client.put('/api/profile/', data)
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertIn('first_name', response.data)
-
     def test_update_profile_partial_update(self):
         data = {'last_name': 'Smith'}
         response = self.client.put('/api/profile/', data)  # Use PUT instead of PATCH

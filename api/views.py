@@ -198,7 +198,7 @@ class ProfileView(APIView):
     def put(self, request):
         # Update user details
         user = request.user
-        serializer = UserSerializer(user, data=request.data, partial=True)  # `partial=True` allows updating specific fields
+        serializer = UserSerializer(user, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
